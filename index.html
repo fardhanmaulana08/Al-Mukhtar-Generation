@@ -1,0 +1,1702 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Al-Mukhtar | Generation 609</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" href="AlMukhtar.png">
+    <style>
+        :root {
+            --dark: #0a0a0a;
+            --dark-emerald: #0d1b1e;
+            --emerald: #2e8b57;
+            --light-emerald: #4caf8a;
+            --white: #f8f9fa;
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--dark);
+            color: var(--white);
+            overflow-x: hidden;
+            line-height: 1.6;
+            position: relative;
+        }
+
+        /* Animated Gradient Background */
+        .gradient-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #0a0a0a 0%, #0d1b1e 30%, #2e8b57 70%, #4caf8a 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 25s ease infinite;
+            z-index: -1;
+        }
+
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Typography */
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #e0e0e0;
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            padding: 6rem 0;
+            position: relative;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .btn {
+            display: inline-block;
+            background: rgba(46, 139, 87, 0.3);
+            color: white;
+            padding: 0.8rem 2rem;
+            border: 1px solid var(--emerald);
+            border-radius: 30px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+            backdrop-filter: blur(4px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn:active::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn:hover {
+            background: rgba(46, 139, 87, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            background: var(--emerald);
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background: var(--light-emerald);
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(46, 139, 87, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            background: rgba(10, 10, 10, 0.95);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--emerald);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-logo:hover {
+            color: var(--light-emerald);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: var(--emerald);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: var(--emerald);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .nav-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--white);
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        .nav-menu.active {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            border-top: 1px solid rgba(46, 139, 87, 0.2);
+        }
+
+        .nav-toggle.active span:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .nav-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .nav-toggle.active span:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+
+        /* Fade-in animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Hero Section */
+        #hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            padding-top: 0;
+            padding-bottom: 0;
+            overflow: hidden;
+        }
+
+        /* Particle Background */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            background: rgba(76, 175, 138, 0.3);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .particle:nth-child(1) {
+            width: 4px;
+            height: 4px;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .particle:nth-child(2) {
+            width: 6px;
+            height: 6px;
+            left: 20%;
+            animation-delay: 1s;
+        }
+
+        .particle:nth-child(3) {
+            width: 3px;
+            height: 3px;
+            left: 30%;
+            animation-delay: 2s;
+        }
+
+        .particle:nth-child(4) {
+            width: 5px;
+            height: 5px;
+            left: 40%;
+            animation-delay: 3s;
+        }
+
+        .particle:nth-child(5) {
+            width: 4px;
+            height: 4px;
+            left: 50%;
+            animation-delay: 4s;
+        }
+
+        .particle:nth-child(6) {
+            width: 7px;
+            height: 7px;
+            left: 60%;
+            animation-delay: 5s;
+        }
+
+        .particle:nth-child(7) {
+            width: 3px;
+            height: 3px;
+            left: 70%;
+            animation-delay: 6s;
+        }
+
+        .particle:nth-child(8) {
+            width: 5px;
+            height: 5px;
+            left: 80%;
+            animation-delay: 7s;
+        }
+
+        .particle:nth-child(9) {
+            width: 4px;
+            height: 4px;
+            left: 90%;
+            animation-delay: 8s;
+        }
+
+        .particle:nth-child(10) {
+            width: 6px;
+            height: 6px;
+            left: 15%;
+            animation-delay: 9s;
+        }
+
+        .particle:nth-child(11) {
+            width: 3px;
+            height: 3px;
+            left: 25%;
+            animation-delay: 10s;
+        }
+
+        .particle:nth-child(12) {
+            width: 5px;
+            height: 5px;
+            left: 35%;
+            animation-delay: 11s;
+        }
+
+        .particle:nth-child(13) {
+            width: 4px;
+            height: 4px;
+            left: 45%;
+            animation-delay: 12s;
+        }
+
+        .particle:nth-child(14) {
+            width: 6px;
+            height: 6px;
+            left: 55%;
+            animation-delay: 13s;
+        }
+
+        .particle:nth-child(15) {
+            width: 3px;
+            height: 3px;
+            left: 65%;
+            animation-delay: 14s;
+        }
+
+        .particle:nth-child(16) {
+            width: 5px;
+            height: 5px;
+            left: 75%;
+            animation-delay: 15s;
+        }
+
+        .particle:nth-child(17) {
+            width: 4px;
+            height: 4px;
+            left: 85%;
+            animation-delay: 16s;
+        }
+
+        .particle:nth-child(18) {
+            width: 7px;
+            height: 7px;
+            left: 5%;
+            animation-delay: 17s;
+        }
+
+        .particle:nth-child(19) {
+            width: 3px;
+            height: 3px;
+            left: 95%;
+            animation-delay: 18s;
+        }
+
+        .particle:nth-child(20) {
+            width: 5px;
+            height: 5px;
+            left: 50%;
+            animation-delay: 19s;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+        }
+
+        #hero h1 {
+            margin-bottom: 1.5rem;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        #hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            color: #c0c0c0;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        /* Slider */
+        #slider-section {
+            background: rgba(10, 10, 10, 0.7);
+        }
+
+        .slider-container {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            height: 500px;
+        }
+
+        .slide {
+            min-width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .slider-controls {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .slider-btn {
+            background: rgba(46, 139, 87, 0.4);
+            border: none;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .slider-btn:hover {
+            background: var(--emerald);
+            transform: scale(1.1);
+        }
+
+        /* Cerita Angkatan */
+        .story-card {
+            background: rgba(13, 27, 30, 0.6);
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(46, 139, 87, 0.2);
+            transition: var(--transition);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .story-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(46, 139, 87, 0.1), transparent);
+            transition: left 0.5s;
+        }
+
+        .story-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(46, 139, 87, 0.3);
+            border-color: var(--emerald);
+        }
+
+        .story-card:hover::before {
+            left: 100%;
+        }
+
+        .story-icon {
+            font-size: 2rem;
+            color: var(--emerald);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        /* Timeline */
+        #timeline {
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(to bottom, var(--emerald), var(--light-emerald));
+            left: 50%;
+            margin-left: -2px;
+            border-radius: 2px;
+            box-shadow: 0 0 10px rgba(46, 139, 87, 0.5);
+        }
+
+        .timeline-item {
+            width: 50%;
+            padding: 1.5rem;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+            text-align: left;
+        }
+
+        .timeline-content {
+            background: rgba(13, 27, 30, 0.7);
+            padding: 1.5rem;
+            border-radius: 10px;
+            position: relative;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(46, 139, 87, 0.2);
+        }
+
+        .timeline-content::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--emerald);
+            border-radius: 50%;
+            top: 20px;
+            box-shadow: 0 0 0 4px rgba(46, 139, 87, 0.3);
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content::after {
+            right: -50px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::after {
+            left: -50px;
+        }
+
+        /* Progress Bar */
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(46, 139, 87, 0.2);
+            border-radius: 4px;
+            margin: 1rem 0;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--emerald), var(--light-emerald));
+            width: 0%;
+            border-radius: 4px;
+            transition: width 2s ease-in-out;
+        }
+
+        .timeline-item.visible .progress-fill {
+            width: 100%;
+        }
+
+        /* Timeline Counters */
+        .timeline-counter {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--emerald);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .gallery-item {
+            height: 250px;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 1;
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .modal-content img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .modal-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(46, 139, 87, 0.8);
+            border: none;
+            color: white;
+            font-size: 2rem;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: var(--transition);
+            z-index: 1001;
+        }
+
+        .modal-nav:hover {
+            background: var(--emerald);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .modal-nav.prev {
+            left: 20px;
+        }
+
+        .modal-nav.next {
+            right: 20px;
+        }
+
+        /* Quotes */
+        .quote-section {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: rgba(10, 10, 10, 0.7);
+        }
+
+        .quote {
+            font-size: 1.8rem;
+            font-style: italic;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            color: #e0e0e0;
+            border-right: 2px solid var(--emerald);
+            white-space: nowrap;
+            overflow: hidden;
+            animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+
+        .quote-author {
+            font-size: 1.2rem;
+            color: var(--light-emerald);
+        }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 100%;
+            }
+        }
+
+        @keyframes blink-caret {
+
+            from,
+            to {
+                border-color: transparent;
+            }
+
+            50% {
+                border-color: var(--emerald);
+            }
+        }
+
+        /* Social Media */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .social-link {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(13, 27, 30, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            text-decoration: none;
+            transition: var(--transition);
+            border: 1px solid rgba(46, 139, 87, 0.3);
+        }
+
+        .social-link:hover {
+            background: var(--emerald);
+            transform: translateY(-3px);
+            box-shadow: 0 0 15px rgba(46, 139, 87, 0.6);
+        }
+
+        /* Penutup */
+        #penutup {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+        #penutup p {
+            font-size: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            font-style: italic;
+            color: #f0f0f0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .slider {
+                height: 350px;
+            }
+
+            .timeline::before {
+                left: 30px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 0;
+                text-align: left !important;
+            }
+
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+
+            .timeline-content::after {
+                left: -50px !important;
+            }
+
+            /* Progress Bar */
+            .progress-bar {
+                width: 100%;
+                height: 8px;
+                background: rgba(46, 139, 87, 0.2);
+                border-radius: 4px;
+                margin: 1rem 0;
+                overflow: hidden;
+            }
+
+            .progress-fill {
+                height: 100%;
+                background: linear-gradient(90deg, var(--emerald), var(--light-emerald));
+                width: 0%;
+                border-radius: 4px;
+                transition: width 2s ease-in-out;
+            }
+
+            .timeline-item.visible .progress-fill {
+                width: 100%;
+            }
+
+            #penutup p {
+                font-size: 1.5rem;
+            }
+
+            .nav-toggle {
+                display: flex;
+            }
+
+            .nav-menu {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .quote {
+                font-size: 1.4rem;
+            }
+
+            .slider {
+                height: 280px;
+            }
+        }
+
+        .slider-container {
+            perspective: 1600px;
+            overflow: hidden;
+        }
+
+        .slider {
+            display: flex;
+            align-items: center;
+            transform-style: preserve-3d;
+        }
+
+        .slide-card {
+            width: 260px;
+            height: 360px;
+            background: #c00;
+            border-radius: 20px;
+            margin: 0 20px;
+            transition: transform 0.4s ease, opacity 0.4s ease;
+            transform-origin: center;
+            will-change: transform;
+        }
+
+        .slide-card img {
+            transition: transform 0.4s ease;
+        }
+
+        .slide-card:hover img {
+            transform: scale(1.05);
+        }
+
+        /* CARD AKTIF (TENGAH) */
+        .slide-card.active {
+            transform: rotateY(0deg) scale(1.05);
+            opacity: 1;
+            z-index: 5;
+            box-shadow: 0 0 30px rgba(46, 139, 87, 0.6), 0 10px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        /* KIRI & KANAN */
+        .slide-card.left {
+            transform: rotateY(15deg) scale(0.9);
+        }
+
+        .slide-card.right {
+            transform: rotateY(-15deg) scale(0.9);
+        }
+
+        .slide-card:hover {
+            transform: rotateY(0deg) scale(1.08);
+            opacity: 1;
+        }
+
+        .slide-card {
+            transform-style: preserve-3d;
+        }
+
+        .slide-card.active {
+            transform: rotateY(0deg) scale(1.1) translateZ(80px);
+        }
+
+        .slide-card.left {
+            transform: rotateY(25deg) scale(0.9) translateZ(-40px);
+        }
+
+        .slide-card.right {
+            transform: rotateY(-25deg) scale(0.9) translateZ(-40px);
+        }
+
+        .slide-card .info {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            padding: 15px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: 0.5s;
+        }
+
+        .slide-card.active .info {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .slider-wrapper {
+            perspective: 1200px;
+            overflow: hidden;
+        }
+
+        .slider-3d {
+            position: relative;
+            height: 360px;
+            transform-style: preserve-3d;
+            cursor: grab;
+        }
+
+        .slide-card {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transform-style: preserve-3d;
+            transition: transform 0.35s ease, opacity 0.35s ease;
+            opacity: 0;
+        }
+
+        .slide-card img {
+            width: 260px;
+            height: 360px;
+            border-radius: 16px;
+            object-fit: cover;
+        }
+
+        /* Footer */
+        .footer {
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(46, 139, 87, 0.2);
+            padding: 3rem 0 1rem;
+            color: var(--white);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-logo {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .footer-logo img {
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(46, 139, 87, 0.3);
+        }
+
+        .footer-logo h3 {
+            font-size: 1.5rem;
+            color: var(--emerald);
+            margin: 0;
+            font-weight: 600;
+        }
+
+        .footer-links h4,
+        .footer-contact h4 {
+            font-size: 1.2rem;
+            color: var(--light-emerald);
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: #e0e0e0;
+            text-decoration: none;
+            transition: var(--transition);
+            font-weight: 400;
+        }
+
+        .footer-links a:hover {
+            color: var(--emerald);
+            transform: translateX(5px);
+        }
+
+        .footer-contact p {
+            margin-bottom: 0.5rem;
+            color: #c0c0c0;
+            font-size: 0.95rem;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(46, 139, 87, 0.1);
+            padding-top: 1.5rem;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            margin: 0;
+            color: #a0a0a0;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .footer {
+                padding: 2rem 0 1rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .footer-logo {
+                align-items: center;
+                text-align: center;
+            }
+
+            .footer-links,
+            .footer-contact {
+                text-align: center;
+            }
+        }
+
+        .social-grid {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .social-card {
+            background: none;
+            padding: 0;
+            border-radius: 0;
+            color: inherit;
+        }
+
+        .social-card i {
+            font-size: 28px;
+            transition: transform 0.25s ease;
+        }
+
+        /* Warna asli brand */
+        .icon-ig i {
+            color: #E4405F;
+        }
+
+        .icon-wa i {
+            color: #25D366;
+        }
+
+        .icon-yt i {
+            color: #FF0000;
+        }
+
+        .icon-tk i {
+            color: #ece5e5;
+        }
+
+        .icon-mail i {
+            color: #ebe1e1;
+        }
+
+        .social-card:hover i {
+            transform: scale(1.15);
+        }
+    </style>
+</head>
+
+<body>
+    <audio id="bg-music" loop>
+        <source src="Best Friend-Rex Orange County.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="gradient-bg"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">
+                Al-Mukhtar Generation
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#hero" class="nav-link">Beranda</a></li>
+                <li><a href="#slider-section" class="nav-link">Anggota</a></li>
+                <li><a href="#cerita" class="nav-link">Cerita</a></li>
+                <li><a href="#timeline" class="nav-link">Perjalanan</a></li>
+                <li><a href="#gallery" class="nav-link">Galeri</a></li>
+                <li><a href="#social" class="nav-link">Kontak</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="section">
+        <div class="particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+        <div class="container">
+            <h1 class="fade-in">AL - MUKHTAR GENERATION</h1>
+            <p class="fade-in">“Bukan sekadar angkatan, tapi perjalanan hidup.”</p>
+            <div class="hero-buttons fade-in">
+                <button id="play-music" class="btn btn-primary">▶ Play Music</button>
+                <a href="#slider-section" class="btn">↓ Mulai Perjalanan</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slider Section -->
+    <section id="slider-section" class="section">
+        <div class="container">
+            <h2 class="text-center fade-in">Our</h2>
+            <div class="slider-wrapper">
+                <div class="slider-3d" id="photo-slider">
+                    <div class="slide-card"><img src="agil.jpg"></div>
+                    <div class="slide-card"><img src="alfa.jpg"></div>
+                    <div class="slide-card"><img src="alfian.jpg"></div>
+                    <div class="slide-card"><img src="aul.jpg"></div>
+                    <div class="slide-card"><img src="awan.jpg"></div>
+                    <div class="slide-card"><img src="bagus.jpg"></div>
+                    <div class="slide-card"><img src="bilqis.jpg"></div>
+                    <div class="slide-card"><img src="damar.jpg"></div>
+                    <div class="slide-card"><img src="dandi.jpg"></div>
+                    <div class="slide-card"><img src="fardhan.jpg"></div>
+                    <div class="slide-card"><img src="ghazali.jpg"></div>
+                    <div class="slide-card"><img src="icha.jpg"></div>
+                    <div class="slide-card"><img src="ilham.jpg"></div>
+                    <div class="slide-card"><img src="labib.jpg"></div>
+                    <div class="slide-card"><img src="nabil.jpg"></div>
+                    <div class="slide-card"><img src="pandu.jpg"></div>
+                    <div class="slide-card"><img src="rara.jpg"></div>
+                    <div class="slide-card"><img src="riski.jpg"></div>
+                    <div class="slide-card"><img src="udin.jpg"></div>
+                    <div class="slide-card"><img src="wijdan.jpg"></div>
+                    <div class="slide-card"><img src="zaki.jpg"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cerita Angkatan -->
+    <section id="cerita" class="section">
+        <div class="container">
+            <h2 class="text-center fade-in">Cerita Kami</h2>
+            <div class="story-card fade-in">
+                <span class="story-icon">🎓</span>
+                <p>Ingat hari pertama kita masuk? Gugup, bingung, tapi penuh harapan. Tak menyangka persahabatan ini
+                    akan menjadi pondasi yang tak tergoyahkan selama bertahun-tahun.</p>
+            </div>
+            <div class="story-card fade-in">
+                <span class="story-icon">👥</span>
+                <p>Dari tawa di kantin, begadang mengerjakan tugas, sampai saling menangis saat ujian gagal—kita
+                    melewatinya bersama. Setiap air mata dan tawa membentuk ikatan yang tak terlihat tapi kuat.</p>
+            </div>
+            <div class="story-card fade-in">
+                <span class="story-icon">🌳</span>
+                <p>Kita bukan hanya bertahan, tapi tumbuh. Dan di akhir perjalanan ini, kita bukan hanya lulusan—kita
+                    adalah keluarga.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline -->
+    <h2 class="text-center fade-in">Perjalanan Kami</h2>
+    <section id="timeline" class="section">
+        <div class="container">
+            <div class="timeline">
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-counter">1</div>
+                        <h3>2019</h3>
+                        <div class="progress-bar">
+                            <div class="progress-fill"></div>
+                        </div>
+                        <p>Hari pertama masuk. Wajah asing, seragam baru, dan mimpi besar.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-counter">2</div>
+                        <h3>2023</h3>
+                        <div class="progress-bar">
+                            <div class="progress-fill"></div>
+                        </div>
+                        <p>Bersama melewati ujian pertama. Belajar arti kebersamaan.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-counter">3</div>
+                        <h3>2024</h3>
+                        <div class="progress-bar">
+                            <div class="progress-fill"></div>
+                        </div>
+                        <p>Acara tahunan pertama. Tawa, tarian, dan kenangan tak terlupakan.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-counter">4</div>
+                        <h3>2025</h3>
+                        <div class="progress-bar">
+                            <div class="progress-fill"></div>
+                        </div>
+                        <p>Ujian akhir. Saling mendukung, saling menguatkan.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-counter">5</div>
+                        <h3>2026</h3>
+                        <div class="progress-bar">
+                            <div class="progress-fill"></div>
+                        </div>
+                        <p>Wisuda. Air mata bahagia, pelukan terakhir, dan janji untuk tetap terhubung.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Penutup -->
+    <section id="penutup" class="section">
+        <div class="container">
+            <p class="fade-in">“Kita mungkin tidak selalu bersama,<br>tapi kenangan ini akan hidup selamanya.”</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="AlMukhtar.png" alt="Al-Mukhtar Logo" style="width: 60px;">
+                    <h3>Al-Mukhtar Generation 609</h3>
+                    <!-- Social Media -->
+                    <section id="social" class="section social-section">
+                        <h4>Tetap Terhubung :</h4><br>
+                        <div class="social-grid">
+
+                            <a href="https://www.instagram.com/almukhtar_update?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                                class="social-card icon-ig">
+                                <i class="fa-brands fa-instagram"></i>
+                                <span></span>
+                            </a>
+
+                            <a href="https://whatsapp.com/channel/0029Vaq6JP42UPBH4WlPHv0D" class="social-card icon-wa">
+                                <i class="fa-brands fa-whatsapp"></i>
+                                <span></span>
+                            </a>
+
+                            <a href="https://www.tiktok.com/@almukhtar_609?is_from_webapp=1&sender_device=pc" class="social-card icon-tk">
+                                <i class="fa-brands fa-tiktok"></i>
+                                <span></span>
+                            </a>
+
+                            <a href="#" class="social-card icon-mail">
+                                <i class="fa-solid fa-envelope"></i>
+                                <span></span>
+                            </a>
+
+                        </div>
+                    </section>
+                </div>
+                <div class="footer-links">
+                    <h4>Navigasi</h4>
+                    <ul>
+                        <li><a href="#hero">Beranda</a></li>
+                        <li><a href="#slider-section">Anggota</a></li>
+                        <li><a href="#cerita">Cerita</a></li>
+                        <li><a href="#timeline">Perjalanan</a></li>
+                        <li><a href="#gallery">Galeri</a></li>
+                        <li><a href="#social">Kontak</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Kontak</h4>
+                    <p>Email: info@almukhtar609.com</p>
+                    <p>Telepon: +62 882 1448 6502</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Al-Mukhtar Generation 609. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div class="modal" id="image-modal">
+        <span class="close-modal">&times;</span>
+        <button class="modal-nav prev">
+            < <button class="modal-nav next">>
+        </button>
+        <div class="modal-content">
+            <img id="modal-img" src="" alt="Kenangan">
+        </div>
+    </div>
+
+    <script>
+        // Fade-in on scroll
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+
+        const slider = document.getElementById('photo-slider');
+        const cards = document.querySelectorAll('.slide-card');
+
+        let current = Math.floor(cards.length / 2);
+        let startX = 0;
+        let currentX = 0;
+        let isDragging = false;
+        let autoSlideInterval;
+
+        /* ===== UPDATE POSISI CARD ===== */
+        function updateCarousel(offset = 0) {
+            cards.forEach((card, index) => {
+                const diff = index - current + offset;
+
+                const translateX = diff * 280;
+                const translateZ = Math.abs(diff) * -120;
+                const rotateY = diff * -25;
+                const opacity = Math.abs(diff) > 2 ? 0 : 1;
+                const brightness = Math.max(0.3, 1 - Math.abs(diff) * 0.4); // Lighting effect: brighter for closer cards
+
+                card.style.transform = `
+      translateX(${translateX}px)
+      translateZ(${translateZ}px)
+      rotateY(${rotateY}deg)
+    `;
+                card.style.opacity = opacity;
+                card.style.filter = `brightness(${brightness})`;
+            });
+        }
+
+        updateCarousel();
+
+        /* ===== DESKTOP DRAG ===== */
+        slider.addEventListener('mousedown', e => {
+            startX = e.clientX;
+            isDragging = true;
+            slider.style.cursor = 'grabbing';
+        });
+
+        window.addEventListener('mousemove', e => {
+            if (!isDragging) return;
+            currentX = e.clientX;
+            const delta = (currentX - startX) / 120;
+            updateCarousel(delta);
+        });
+
+        window.addEventListener('mouseup', () => {
+            if (!isDragging) return;
+            isDragging = false;
+            slider.style.cursor = 'grab';
+
+            const delta = currentX - startX;
+            if (delta > 80 && current > 0) current--;
+            if (delta < -80 && current < cards.length - 1) current++;
+
+            updateCarousel();
+        });
+
+        /* ===== MOBILE SWIPE ===== */
+        slider.addEventListener('touchstart', e => {
+            startX = e.touches[0].clientX;
+        });
+
+        slider.addEventListener('touchmove', e => {
+            currentX = e.touches[0].clientX;
+            const delta = (currentX - startX) / 120;
+            updateCarousel(delta);
+        });
+
+        slider.addEventListener('touchend', () => {
+            const delta = currentX - startX;
+
+            if (delta > 80 && current > 0) current--;
+            if (delta < -80 && current < cards.length - 1) current++;
+
+            updateCarousel();
+        });
+
+        /* ===== AUTO SLIDE (UNTUK MUSIK) ===== */
+        function startAutoSlide() {
+            autoSlideInterval = setInterval(() => {
+                current = (current + 1) % cards.length;
+                updateCarousel();
+            }, 3500);
+        }
+
+        function stopAutoSlide() {
+            clearInterval(autoSlideInterval);
+        }
+
+        /* ===== HUBUNGKAN DENGAN MUSIK ===== */
+        const audio = document.getElementById('bg-music');
+        const playBtn = document.getElementById('play-music');
+        let musicPlaying = false;
+
+        playBtn.onclick = () => {
+            if (!musicPlaying) {
+                audio.play();
+                playBtn.textContent = '⏸ Stop Music';
+                startAutoSlide();
+                musicPlaying = true;
+            } else {
+                audio.pause();
+                stopAutoSlide();
+                playBtn.textContent = '▶ Play Music';
+                musicPlaying = false;
+            }
+        };
+
+        /* ===== PAUSE ON HOVER ===== */
+        slider.addEventListener('mouseenter', () => {
+            if (musicPlaying) {
+                stopAutoSlide();
+            }
+        });
+
+        slider.addEventListener('mouseleave', () => {
+            if (musicPlaying) {
+                startAutoSlide();
+            }
+        });
+
+        /* ===== NAVIGATION FUNCTIONALITY ===== */
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            navToggle.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                navToggle.classList.remove('active');
+            });
+        });
+
+        // Gallery Modal Functionality
+        const modal = document.getElementById('image-modal');
+        const modalImg = document.getElementById('modal-img');
+        const closeModal = document.querySelector('.close-modal');
+        const prevBtn = document.querySelector('.modal-nav.prev');
+        const nextBtn = document.querySelector('.modal-nav.next');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        let currentImageIndex = 0;
+        const images = Array.from(galleryItems).map(item => item.getAttribute('data-img'));
+
+        // Open modal
+        galleryItems.forEach((item, index) => {
+            item.addEventListener('click', () => {
+                currentImageIndex = index;
+                modalImg.src = images[currentImageIndex];
+                modal.classList.add('active');
+            });
+        });
+
+        // Close modal
+        closeModal.addEventListener('click', () => {
+            modal.classList.remove('active');
+        });
+
+        // Close modal when clicking outside
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+            }
+        });
+
+        // Navigate images
+        prevBtn.addEventListener('click', () => {
+            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+            modalImg.src = images[currentImageIndex];
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            modalImg.src = images[currentImageIndex];
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (!modal.classList.contains('active')) return;
+
+            if (e.key === 'ArrowLeft') {
+                prevBtn.click();
+            } else if (e.key === 'ArrowRight') {
+                nextBtn.click();
+            } else if (e.key === 'Escape') {
+                modal.classList.remove('active');
+            }
+        });
+    </script>
+
+
+</body>
+
+</html>
