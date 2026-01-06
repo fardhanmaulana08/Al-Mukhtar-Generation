@@ -87,9 +87,21 @@
             margin-bottom: 1.5rem;
         }
 
+        h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
         p {
             font-size: 1.1rem;
             color: #e0e0e0;
+            line-height: 1.7;
+        }
+
+        .lead {
+            font-size: 1.3rem;
+            font-weight: 300;
+            color: #c0c0c0;
         }
 
         /* Utility Classes */
@@ -953,6 +965,32 @@
             .slider {
                 height: 280px;
             }
+
+            .slide-card {
+                width: 200px;
+                height: 280px;
+            }
+
+            .slide-card img {
+                width: 200px;
+                height: 280px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .slide-card {
+                width: 220px;
+                height: 300px;
+            }
+
+            .slide-card img {
+                width: 220px;
+                height: 300px;
+            }
+
+            .slider-3d {
+                height: 300px;
+            }
         }
 
         .slider-container {
@@ -1039,6 +1077,21 @@
             transform: translateY(0);
         }
 
+        .member-name {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-align: center;
+            z-index: 2;
+        }
+
         .slider-wrapper {
             perspective: 1200px;
             overflow: hidden;
@@ -1053,7 +1106,7 @@
 
         .slide-card {
             position: absolute;
-            left: 50%;
+            left: calc(50% - 130px);
             top: 0;
             transform-style: preserve-3d;
             transition: transform 0.35s ease, opacity 0.35s ease;
@@ -1151,12 +1204,13 @@
 
         @media (max-width: 768px) {
             .footer {
-                padding: 2rem 0 1rem;
+                padding: 1rem 0 0.5rem;
             }
 
             .footer-content {
                 grid-template-columns: 1fr;
-                gap: 1.5rem;
+                gap: 1rem;
+                margin-bottom: 1rem;
             }
 
             .footer-logo {
@@ -1167,6 +1221,14 @@
             .footer-links,
             .footer-contact {
                 text-align: center;
+            }
+
+            .footer-bottom {
+                padding-top: 1rem;
+            }
+
+            .social-card i {
+                font-size: 24px;
             }
         }
 
@@ -1284,27 +1346,69 @@
             <h2 class="text-center fade-in">Our</h2>
             <div class="slider-wrapper">
                 <div class="slider-3d" id="photo-slider">
-                    <div class="slide-card"><img src="agil.jpg"></div>
-                    <div class="slide-card"><img src="alfa.jpg"></div>
-                    <div class="slide-card"><img src="alfian.jpg"></div>
-                    <div class="slide-card"><img src="aul.jpg"></div>
-                    <div class="slide-card"><img src="awan.jpg"></div>
-                    <div class="slide-card"><img src="bagus.jpg"></div>
-                    <div class="slide-card"><img src="bilqis.jpg"></div>
-                    <div class="slide-card"><img src="damar.jpg"></div>
-                    <div class="slide-card"><img src="dandi.jpg"></div>
-                    <div class="slide-card"><img src="fardhan.jpg"></div>
-                    <div class="slide-card"><img src="ghazali.jpg"></div>
-                    <div class="slide-card"><img src="icha.jpg"></div>
-                    <div class="slide-card"><img src="ilham.jpg"></div>
-                    <div class="slide-card"><img src="labib.jpg"></div>
-                    <div class="slide-card"><img src="nabil.jpg"></div>
-                    <div class="slide-card"><img src="pandu.jpg"></div>
-                    <div class="slide-card"><img src="rara.jpg"></div>
-                    <div class="slide-card"><img src="riski.jpg"></div>
-                    <div class="slide-card"><img src="udin.jpg"></div>
-                    <div class="slide-card"><img src="wijdan.jpg"></div>
-                    <div class="slide-card"><img src="zaki.jpg"></div>
+                    <div class="slide-card"><img src="agil.jpg">
+                        <div class="member-name">Agil</div>
+                    </div>
+                    <div class="slide-card"><img src="alfa.jpg">
+                        <div class="member-name">Alfa</div>
+                    </div>
+                    <div class="slide-card"><img src="alfian.jpg">
+                        <div class="member-name">Alfian</div>
+                    </div>
+                    <div class="slide-card"><img src="aul.jpg">
+                        <div class="member-name">Aul</div>
+                    </div>
+                    <div class="slide-card"><img src="awan.jpg">
+                        <div class="member-name">Awan</div>
+                    </div>
+                    <div class="slide-card"><img src="bagus.jpg">
+                        <div class="member-name">Bagus</div>
+                    </div>
+                    <div class="slide-card"><img src="bilqis.jpg">
+                        <div class="member-name">Bilqis</div>
+                    </div>
+                    <div class="slide-card"><img src="damar.jpg">
+                        <div class="member-name">Damar</div>
+                    </div>
+                    <div class="slide-card"><img src="dandi.jpg">
+                        <div class="member-name">Dandi</div>
+                    </div>
+                    <div class="slide-card"><img src="fardhan.jpg">
+                        <div class="member-name">Fardhan</div>
+                    </div>
+                    <div class="slide-card"><img src="ghazali.jpg">
+                        <div class="member-name">Ghazali</div>
+                    </div>
+                    <div class="slide-card"><img src="icha.jpg">
+                        <div class="member-name">Icha</div>
+                    </div>
+                    <div class="slide-card"><img src="ilham.jpg">
+                        <div class="member-name">Ilham</div>
+                    </div>
+                    <div class="slide-card"><img src="labib.jpg">
+                        <div class="member-name">Labib</div>
+                    </div>
+                    <div class="slide-card"><img src="nabil.jpg">
+                        <div class="member-name">Nabil</div>
+                    </div>
+                    <div class="slide-card"><img src="pandu.jpg">
+                        <div class="member-name">Pandu</div>
+                    </div>
+                    <div class="slide-card"><img src="rara.jpg">
+                        <div class="member-name">Rara</div>
+                    </div>
+                    <div class="slide-card"><img src="riski.jpg">
+                        <div class="member-name">Riski</div>
+                    </div>
+                    <div class="slide-card"><img src="udin.jpg">
+                        <div class="member-name">Udin</div>
+                    </div>
+                    <div class="slide-card"><img src="wijdan.jpg">
+                        <div class="member-name">Wijdan</div>
+                    </div>
+                    <div class="slide-card"><img src="zaki.jpg">
+                        <div class="member-name">Zaki</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1421,7 +1525,8 @@
                                 <span></span>
                             </a>
 
-                            <a href="https://www.tiktok.com/@almukhtar_609?is_from_webapp=1&sender_device=pc" class="social-card icon-tk">
+                            <a href="https://www.tiktok.com/@almukhtar_609?is_from_webapp=1&sender_device=pc"
+                                class="social-card icon-tk">
                                 <i class="fa-brands fa-tiktok"></i>
                                 <span></span>
                             </a>
